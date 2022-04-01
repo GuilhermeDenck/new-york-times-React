@@ -11,6 +11,9 @@ const NewYorkProvider = ({children}) => {
   const [business, setBusiness] = useState([]);
   const [tech, setTech] = useState([]);
 
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   const formatNews = (news) => {
     const newsFormated = news.results.map( e => {
       return {
@@ -29,8 +32,11 @@ const NewYorkProvider = ({children}) => {
     try {
       const {data} = await api.get('/home.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
       setHome(formatNews(data));
+      setLoading(false);
       return data;
     } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error);
     }
   }
@@ -38,8 +44,11 @@ const NewYorkProvider = ({children}) => {
   const getNewsWorld = async () => {
     try {
       const {data} = await api.get('/world.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
+      setLoading(false);
       return data;
     } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error);
     }
   }
@@ -47,8 +56,11 @@ const NewYorkProvider = ({children}) => {
   const getNewsFood = async () => {
     try {
       const {data} = await api.get('/food.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
+      setLoading(false);
       return data;
     } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error);
     }
   }
@@ -56,8 +68,11 @@ const NewYorkProvider = ({children}) => {
   const getNewsBusiness = async () => {
     try {
       const {data} = await api.get('/business.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
+      setLoading(false);
       return data;
     } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error)
     }
   }
@@ -65,14 +80,17 @@ const NewYorkProvider = ({children}) => {
   const getNewsTech = async () => {
     try {
       const {data} = await api.get('/technology.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
+      setLoading(false);
       return data;
     } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error)
     }
   }
 
   return (
-    <NewYorkContext.Provider value={{ getNewsHome, home }}>
+    <NewYorkContext.Provider value={{ getNewsHome, home, error, loading }}>
       {children}
     </NewYorkContext.Provider>
   );
