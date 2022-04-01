@@ -19,7 +19,7 @@ const Home = () => {
   if(error) return <Error />
   return (
     <div className={style.home}>
-      <h1>Home</h1>
+      <h1>1. Gostaríamos que sua página possuísse 4 setores de notícias: Ciência & Tecnologia, Saúde, Política e Mundo. Conforme os setores do The New York Times science, technology, health, politics e world.</h1>
     </div>
   )
 }
