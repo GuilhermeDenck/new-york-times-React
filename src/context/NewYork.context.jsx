@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import api from "../services/api";
+import api from "../service/api";
 
 export const NewYorkContext = createContext();
 

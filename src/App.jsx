@@ -5,11 +5,13 @@ import Home from './pages/Home/Home.screen';
 import SectionsNews from './pages/SectionsNews/SectionsNews.screen';
 
 import './App.css';
+import Header from './components/Header/Header.component';
 
 function App() {
   return (
     <BrowserRouter>
       <NewYorkProvider>
+        <Header />
         <Routes>
           <Route path='*' element={<Home />}/>
           <Route exact path='/nyttop' element={<Home />}/>
