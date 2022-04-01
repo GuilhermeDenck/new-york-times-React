@@ -11,16 +11,16 @@ function App() {
   return (
     <BrowserRouter>
       <NewYorkProvider>
-        <div className='bodyNYT'>
-          <Header />
-          <Routes>
-            <Route path='*' element={<Home />}/>
-            <Route exact path='/nyttop' element={<Home />}/>
-            <Route path='/section' element={<SectionsNews />}> 
-              <Route path=':typeNews' element={<SectionsNews/>}/>
-            </Route>
-          </Routes>
-        </div>
+        <Header />
+          <div className='bodyNYT'>
+            <Routes>
+              <Route path='*' element={<Home />}/>
+              <Route exact path='/nyttop' element={<Home />}/>
+              <Route path='/section' element={<SectionsNews />}> 
+                <Route path=':typeNews' element={<SectionsNews/>}/>
+              </Route>
+            </Routes>
+          </div>
       </NewYorkProvider>
     </BrowserRouter>
   );
