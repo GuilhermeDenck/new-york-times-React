@@ -13,16 +13,15 @@ const NewYorkProvider = ({children}) => {
 
   const formatNews = (news) => {
     const newsFormated = news.results.map( e => {
-      return [
-        e.title,
-        e.abstract,
-        e.url,
-        e.multimedia,
-        e.published_date
-      ]
+      return {
+        title: e.title,
+        abstract: e.abstract,
+        url: e.url,
+        multimedia: e.multimedia,
+        published_date: e.published_date,
+        byline: e.byline
+      }
     });
-
-    console.log(newsFormated);
     return news;
   }
 
@@ -30,7 +29,6 @@ const NewYorkProvider = ({children}) => {
     try {
       const {data} = await api.get('/home.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
       setHome(formatNews(data));
-      console.log(home);
       return data;
     } catch (error) {
       console.log(error);

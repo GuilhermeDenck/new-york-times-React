@@ -1,21 +1,36 @@
-* {
-  margin: 0;
-}
-
-.ul {
-  display: flex;
-  justify-content: space-around;
-  text-decoration: none;
-}
-
-.ul li {
-  display: inline;
-  text-decoration: none;
-  margin-left: 10px;
-  font-size: 15px;
+.header {
+  border-bottom: 1px solid black;
+  max-width: 100%;
+  padding: 10px;
 }
 
 .icon {
   display: flex;
   justify-content: start;
 }
+
+.ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ul li {
+  display: inline;
+  font-size: 15px;
+  margin-left: 20px;
+  color: black;
+}
+
+.ul li:hover {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(236, 233, 233);
+}
+
+.nav {
+  margin: 0 auto;
+  width: 1220px;
+}
+
+
