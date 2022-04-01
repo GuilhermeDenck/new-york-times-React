@@ -22,7 +22,7 @@ const NewYorkProvider = ({children}) => {
         byline: e.byline
       }
     });
-    return news;
+    return newsFormated;
   }
 
   const getNewsHome = async () => {
