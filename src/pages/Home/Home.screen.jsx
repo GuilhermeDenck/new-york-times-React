@@ -8,8 +8,6 @@ const Home = () => {
 
   const { getNewsHome, home, error, loading } = useContext(NewYorkContext);
 
-  console.log(home);
-
   useEffect(() => {
     getNewsHome();
   }, [])
