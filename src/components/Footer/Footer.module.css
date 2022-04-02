@@ -1,7 +1,7 @@
 .footer {
   width: 1220px;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 17px;
   border-top: 2px solid #ccc;
 }
 
@@ -14,7 +14,7 @@
 
 .footerTitle span {
   color: rgb(48, 48, 187);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 h4 {
@@ -34,7 +34,7 @@ li:hover, p:hover {
 }
 
 .subscribe p {
-  font-size: 15px!important;
+  font-size: 13px!important;
 }
 
 .links { 
@@ -58,7 +58,7 @@ li:hover, p:hover {
 
 .item span {
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 16px;
 
 }
 
