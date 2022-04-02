@@ -26,3 +26,20 @@
   border-bottom: 1px solid #fff;
   cursor: pointer;
 }
+
+.topNews {
+  display: flex;
+  max-width: 100%;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.topNews div {
+  margin-right: 5px;
+}
+
+.gridCards {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  margin-top: 20px;
+}

@@ -7,6 +7,7 @@ import NewsDetails from './pages/NewsDetails/NewsDetails.screen';
 
 import './App.css';
 import Header from './components/Header/Header.component';
+import Footer from './components/Footer/Footer.component';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               </Route>
             </Routes>
           </div>
+        <Footer/>
       </NewYorkProvider>
     </BrowserRouter>
   );

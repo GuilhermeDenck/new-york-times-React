@@ -1,0 +1,28 @@
+.topNewsSectionG {
+    width: 100%;
+    margin-top: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.topNewsSectionG img {
+    width: 611px;
+    height: 400px;
+}
+
+.copyright {
+    text-align: end;
+}
+
+.text{
+    margin-bottom: 10px;
+}
+
+.topNewsSectionP {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.topNewsSectionP img {
+    width: 305px;
+    height: 200px;
+}
