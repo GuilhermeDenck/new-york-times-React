@@ -23,13 +23,16 @@ const Home = () => {
   const [cardAside, setCardAside] = useState([]);
   const [rest, setRest] = useState([]);
   
-  const [temp, setTemp] = useState({});
+  const [temp, setTemp] = useState(0);
+  const [max, setMax ] = useState(0);
+  const [min, setMin] = useState(0);
 
-  const getTempNewYork = async() => {
+  const getTempNewYork = async () => {
     try {
       const {data} = await axios.get('https://api.hgbrasil.com/weather?format=json-cors&key=6fc9ef6c');
-      console.log(data.results);
-      setTemp(data.results);
+      setTemp(data.results.temp);
+      setMax(data.results.forecast[0].max);
+      setMin(data.results.forecast[0].min);
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +41,6 @@ const Home = () => {
   useEffect(() => {
     getNewsHome();
     getTempNewYork();
-    console.log(temp);
   }, [])
 
   useEffect(() => {
@@ -57,10 +59,10 @@ const Home = () => {
         <p>{moment().format("ll")}</p>
         <img src={titleNY} alt='New York Times' />
         <div className={style.temp}>
-          <p>{temp.temp}°C</p>
+          <p>{temp}°C</p>
           <div className={style.maxMin}>
-            <small>{temp.forecast[0].max}°</small>
-            <small>{temp.forecast[0].min}°</small>
+            <small>{max}°</small>
+            <small>{min}°</small>
           </div>
         </div>
       </div>
