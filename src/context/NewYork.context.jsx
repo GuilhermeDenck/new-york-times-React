@@ -8,7 +8,7 @@ const NewYorkProvider = ({children}) => {
   const TOKEN = 'jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM';
 
   const [home, setHome] = useState([]);
-  const [news, setNews] = useState({});
+  const [news, setNews] = useState([]);
   const [article, setArticle] = useState({});
 
   const [error, setError] = useState(false);

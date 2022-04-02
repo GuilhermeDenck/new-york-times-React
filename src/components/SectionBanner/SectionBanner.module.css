@@ -1,0 +1,30 @@
+.sectionBanner {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #e2e2e2;
+  margin-bottom: 20px;
+  padding-top: 21px;
+}
+
+.sectionBanner > small {
+  width: 140px;
+  margin-top: 10px;
+  color: rgb(153, 153, 153);
+}
+
+.noticeBanner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+.noticeBanner small {
+  margin-top: 2%;
+  color: rgb(153, 153, 153);
+}
+
+.sectionBanner > img {
+  width: 25%;
+  height: 100%;
+}
