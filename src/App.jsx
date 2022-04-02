@@ -11,8 +11,8 @@ function App() {
   return (
     <BrowserRouter>
       <NewYorkProvider>
+        <Header />
         <div className='bodyNYT'>
-          <Header />
           <Routes>
             <Route path='*' element={<Home />}/>
             <Route exact path='/nyttop' element={<Home />}/>
