@@ -9,6 +9,7 @@ const NewYorkProvider = ({children}) => {
 
   const [home, setHome] = useState([]);
   const [news, setNews] = useState({});
+  const [article, setArticle] = useState({});
 
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ const NewYorkProvider = ({children}) => {
         uri: e.uri,
         multimedia: e.multimedia,
         published_date: e.published_date,
-        short_url: e.short_url,
+        uri: e.uri,
         byline: e.byline
       }
     });
@@ -116,7 +117,8 @@ const NewYorkProvider = ({children}) => {
       getNewsScience, 
       getNewsHealth, 
       getNewsPolitics,
-      home, news, error, loading }}>
+      setArticle,
+      article, home, news, error, loading }}>
       {children}
     </NewYorkContext.Provider>
   );
