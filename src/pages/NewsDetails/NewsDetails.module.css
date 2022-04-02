@@ -1,3 +1,34 @@
-.class {
-  background-color: black;
+.newsDetails {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.newsDetails h1 {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.bannerAuthor {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.bannerAuthor img {
+  width: 50px;
+  height: 50px;
+}
+
+.bannerAuthor p {
+  margin-left: 10px;
+  border-bottom: 1px dotted #cccc;
+}
+
+.newsDetails > img {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.newsDetails > p {
+  font-size: 1.25rem;
 }

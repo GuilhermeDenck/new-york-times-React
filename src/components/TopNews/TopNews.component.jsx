@@ -2,11 +2,10 @@ import moment from 'moment'
 import React from 'react'
 import style from './TopNews.module.css'
 
-const TopNews = ({ title, abstract, url, multimedia, published_date, byline, copyright}) => {
+const TopNews = ({ title, abstract, multimedia, published_date, byline, copyright}) => {
 
   return (
     <div className={style.topNews}>
-      <a href={url}>
         <div className={style.cardInfo}>
           <div className={style.cardInfoLeft}>
             <h1>{title}</h1>
@@ -20,7 +19,6 @@ const TopNews = ({ title, abstract, url, multimedia, published_date, byline, cop
             <p>{copyright}</p>
           </div>
         </div>
-      </a>
     </div>
   )
 }
