@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 .home {
   background-color: white;
-=======
+}
 .gridCards {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
->>>>>>> e196aeb5241d36adf1d7f16137bebc2c18961b8e
 }

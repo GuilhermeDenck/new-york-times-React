@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import TopNew from "../../components/Home/TopNew.component";
+import TopNews from "../../components/Home/TopNews.component";
 import { NewYorkContext } from '../../context/NewYork.context';
 
 import Loading from '../../components/Loading/Loading.component'
@@ -20,22 +20,15 @@ const Home = () => {
 
   return (
     <div className={style.home}>
-      {home.map(e => 
-      (<TopNew  title = {e.title} abstract = {e.abstract} url={e.url} published_date={e.published_date} byline={e.byline} multimedia={e.multimedia[1].url} copyright={e.multimedia[0].copyright}/>)
-      )}
-      <div className={style.gridCards}>
-        {
-          home.map(e => (
-            <Card 
-              keyCard={e.short_url}
-              section={e.section}
-              image={e.multimedia[2].url}
-              caption={e.multimedia[2].caption}
-              title={e.title}
-            />
-          ))
-        }
-      </div>
+      {
+        home.map(e => (
+          <div key={e.uri.split('/')[3]}>
+            <TopNews title = {e.title} abstract = {e.abstract} url={e.url} published_date={e.published_date} byline={e.byline} multimedia={e.multimedia[1].url} copyright={e.multimedia[0].copyright}/>
+          </div>
+        ))
+      
+      }
+      
     </div>
   )
 }

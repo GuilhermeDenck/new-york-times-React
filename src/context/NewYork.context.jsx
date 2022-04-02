@@ -20,6 +20,7 @@ const NewYorkProvider = ({children}) => {
         title: e.title,
         abstract: e.abstract,
         url: e.url,
+        uri: e.uri,
         multimedia: e.multimedia,
         published_date: e.published_date,
         short_url: e.short_url,

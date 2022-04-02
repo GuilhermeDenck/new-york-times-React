@@ -1,6 +1,8 @@
 import { useEffect, useContext } from 'react'
 import { NewYorkContext } from '../../context/NewYork.context';
 import { useParams, useNavigate } from 'react-router-dom';
+import NewsCard from '../../components/Sections/NewsCard.component';
+
 const SectionsNews = () => {
 
   const {typeNews} = useParams();
@@ -35,7 +37,7 @@ const SectionsNews = () => {
 
   return (
     <div>
-      <p></p>
+  
     </div>
   )
 }

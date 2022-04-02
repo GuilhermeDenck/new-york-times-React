@@ -1,11 +1,11 @@
 import moment from 'moment'
 import React from 'react'
-import style from './TopNew.module.css'
+import style from './TopNews.module.css'
 
-const TopNew = ({ title, abstract, url, multimedia, published_date, byline, copyright}) => {
+const TopNews = ({ title, abstract, url, multimedia, published_date, byline, copyright}) => {
 
   return (
-    <div className={style.topNew}>
+    <div className={style.topNews}>
       <a href={url}>
         <div className={style.cardInfo}>
           <div className={style.cardInfoLeft}>
@@ -25,4 +25,4 @@ const TopNew = ({ title, abstract, url, multimedia, published_date, byline, copy
   )
 }
 
-export default TopNew;
+export default TopNews;
