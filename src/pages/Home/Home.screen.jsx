@@ -1,14 +1,18 @@
 import { useEffect, useContext, useState } from "react";
-import TopNews from "../../components/TopNews/TopNews.component";
 import { NewYorkContext } from '../../context/NewYork.context';
 import { Link } from "react-router-dom";
+
+import moment from "moment";
+import axios from "axios";
 
 import Loading from '../../components/Loading/Loading.component'
 import Error from '../../components/Error/Error.component'
 import Card from "../../components/Card/Card.component";
 import AsideCard from "../../components/AsideCard/AsideCard.component";
 import AsideBanner from "../../components/AsideBanner/AsideBanner.component";
+import TopNews from "../../components/TopNews/TopNews.component";
 
+import titleNY from '../../images/nytimes-wordmark.svg'
 import style from './Home.module.css';
 const Home = () => {
 
@@ -19,8 +23,22 @@ const Home = () => {
   const [cardAside, setCardAside] = useState([]);
   const [rest, setRest] = useState([]);
   
+  const [temp, setTemp] = useState({});
+
+  const getTempNewYork = async() => {
+    try {
+      const {data} = await axios.get('https://api.hgbrasil.com/weather?format=json-cors&key=6fc9ef6c');
+      console.log(data.results);
+      setTemp(data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     getNewsHome();
+    getTempNewYork();
+    console.log(temp);
   }, [])
 
   useEffect(() => {
@@ -35,6 +53,17 @@ const Home = () => {
 
   return (
     <div>
+      <div className={style.headerPage}>
+        <p>{moment().format("ll")}</p>
+        <img src={titleNY} alt='New York Times' />
+        <div className={style.temp}>
+          <p>{temp.temp}°C</p>
+          <div className={style.maxMin}>
+            <small>{temp.forecast[0].max}°</small>
+            <small>{temp.forecast[0].min}°</small>
+          </div>
+        </div>
+      </div>
       <div className={style.mainNotice}>
         <div  className={style.top}>
           {

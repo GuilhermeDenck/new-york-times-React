@@ -1,12 +1,14 @@
 .topNews {
     /* border: 1px solid black; */
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .cardInfo {
     display: flex;
-    padding: 20px;
-    
+    padding: 20px 0px;
+    padding-right: 20px;
 }
 
 .cardInfo img {

@@ -1,3 +1,32 @@
+.headerPage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerPage img {
+  width: 430px;
+  height: 90px;
+}
+
+.temp {
+  display: flex;
+}
+
+.temp > p {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.maxMin {
+  display: flex;
+}
+
+.maxMin small {
+  font-size: 11px;
+  margin: 0 5px;
+}
+
 .gridCards {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
