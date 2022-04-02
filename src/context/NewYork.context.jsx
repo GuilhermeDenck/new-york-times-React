@@ -16,11 +16,13 @@ const NewYorkProvider = ({children}) => {
   const formatNews = (news) => {
     const newsFormated = news.results.map( e => {
       return {
+        section: e.section,
         title: e.title,
         abstract: e.abstract,
         url: e.url,
         multimedia: e.multimedia,
         published_date: e.published_date,
+        short_url: e.short_url,
         byline: e.byline
       }
     });

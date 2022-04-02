@@ -8,6 +8,8 @@ const SectionsNews = () => {
   const { getNewsWorld, getNewsScience, getNewsTech, getNewsHealth, getNewsPolitics, news, error, loading } = useContext(NewYorkContext);
   const navigate = useNavigate();
 
+  console.log(news);
+
   useEffect(() => {
     switch (typeNews) {
       case 'world':
