@@ -1,0 +1,24 @@
+.cardBoxHome {
+  margin: 5px;
+}
+
+.sectionBox {
+  font-weight: 700;
+  color: rgb(18, 18, 18);
+  font-size: 0.8125rem;
+  margin-bottom: 1px;
+}
+
+.cardBox {
+  width: 200px;
+}
+
+.cardBox img {
+  width: 100%;
+}
+
+.cardBox p {
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: rgb(18, 18, 18);;
+}
