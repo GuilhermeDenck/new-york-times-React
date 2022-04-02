@@ -1,7 +1,17 @@
-.home {
-  background-color: white;
-}
 .gridCards {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
+}
+
+.mainNotice {
+  width: 100%;
+  display: flex;
+}
+
+.top {
+  width: 70%;
+}
+
+.aside {
+  width: 30%;
 }

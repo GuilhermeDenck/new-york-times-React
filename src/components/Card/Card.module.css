@@ -7,10 +7,12 @@
   color: rgb(18, 18, 18);
   font-size: 0.8125rem;
   margin-bottom: 1px;
+  margin-left: 17px;
 }
 
 .cardBox {
   width: 200px;
+  margin: 0 auto;
 }
 
 .cardBox img {

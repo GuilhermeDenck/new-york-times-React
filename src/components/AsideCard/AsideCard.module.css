@@ -1,0 +1,14 @@
+.cardBox {
+  width: 100%;
+  margin: 20px 10px;
+}
+
+.cardBox img {
+  width: 100%;
+}
+
+.cardBox p {
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: rgb(18, 18, 18);;
+}

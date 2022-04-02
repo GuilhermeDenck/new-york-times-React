@@ -13,17 +13,6 @@ function App() {
     <BrowserRouter>
       <NewYorkProvider>
         <Header />
-<<<<<<< HEAD
-        <div className='bodyNYT'>
-          <Routes>
-            <Route path='*' element={<Home />}/>
-            <Route exact path='/nyttop' element={<Home />}/>
-            <Route path='/section' element={<SectionsNews />}> 
-              <Route path=':typeNews' element={<SectionsNews/>}/>
-            </Route>
-          </Routes>
-        </div>
-=======
           <div className='bodyNYT'>
             <Routes>
               <Route path='*' element={<Home />}/>
@@ -36,7 +25,6 @@ function App() {
               </Route>
             </Routes>
           </div>
->>>>>>> fdedc4564eff9a1f9d4ccb422dbeaad42250df86
       </NewYorkProvider>
     </BrowserRouter>
   );
