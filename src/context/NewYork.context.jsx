@@ -5,11 +5,13 @@ export const NewYorkContext = createContext();
 
 const NewYorkProvider = ({children}) => {
 
-  const [home, setHome] = useState([])
-  const [world, setWorld] = useState([]);
-  const [food, setFood] = useState([]);
-  const [business, setBusiness] = useState([]);
-  const [tech, setTech] = useState([]);
+  const TOKEN = 'jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM';
+
+  const [home, setHome] = useState([]);
+  const [news, setNews] = useState({});
+
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const formatNews = (news) => {
     const newsFormated = news.results.map( e => {
@@ -27,52 +29,91 @@ const NewYorkProvider = ({children}) => {
 
   const getNewsHome = async () => {
     try {
-      const {data} = await api.get('/home.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
+      const {data} = await api.get(`/home.json?api-key=${TOKEN}`);
       setHome(formatNews(data));
-      return data;
+      setLoading(false);
+      return home;
     } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error);
     }
   }
 
   const getNewsWorld = async () => {
     try {
-      const {data} = await api.get('/world.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
-      return data;
+      const {data} = await api.get(`/world.json?api-key=${TOKEN}`);
+      setLoading(false);
+      setNews(formatNews(data));
+      return news;
     } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error);
-    }
-  }
-
-  const getNewsFood = async () => {
-    try {
-      const {data} = await api.get('/food.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  const getNewsBusiness = async () => {
-    try {
-      const {data} = await api.get('/business.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
-      return data;
-    } catch (error) {
-      console.log(error)
     }
   }
 
   const getNewsTech = async () => {
     try {
-      const {data} = await api.get('/technology.json?api-key=jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM');
-      return data;
+      const {data} = await api.get(`/technology.json?api-key=${TOKEN}`);
+      setLoading(false);
+      setNews(formatNews(data));
+      return news;
     } catch (error) {
+      setLoading(false);
+      setError(true);
+      console.log(error)
+    }
+  }
+
+  const getNewsScience = async () => {
+    try {
+      const {data} = await api.get(`/science.json?api-key=${TOKEN}`);
+      setLoading(false);
+      setNews(formatNews(data));
+      return news;
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+      console.log(error)
+    }
+  }
+
+  const getNewsHealth = async () => {
+    try {
+      const {data} = await api.get(`/health.json?api-key=${TOKEN}`);
+      setLoading(false);
+      setNews(formatNews(data));
+      return news;
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+      console.log(error)
+    }
+  }
+
+  const getNewsPolitics = async () => {
+    try {
+      const {data} = await api.get(`/politics.json?api-key=${TOKEN}`);
+      setLoading(false);
+      setNews(formatNews(data));
+      return news;
+    } catch (error) {
+      setLoading(false);
+      setError(true);
       console.log(error)
     }
   }
 
   return (
-    <NewYorkContext.Provider value={{ getNewsHome, home }}>
+    <NewYorkContext.Provider value={{ 
+      getNewsHome,
+      getNewsWorld, 
+      getNewsTech, 
+      getNewsScience, 
+      getNewsHealth, 
+      getNewsPolitics,
+      home, news, error, loading }}>
       {children}
     </NewYorkContext.Provider>
   );

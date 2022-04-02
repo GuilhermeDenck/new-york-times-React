@@ -10,7 +10,7 @@ const TopNew = ({ title, abstract, url, multimedia, published_date, byline }) =>
         <span>{byline} - <small>{published_date}</small></span>
       </div>
       <div>
-        <img src={multimedia} alt="Imagem sobre a notícia" />
+        {/* <img src={multimedia} alt="Imagem sobre a notícia" /> */}
       </div>
     </a>
 

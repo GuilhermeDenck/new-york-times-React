@@ -8,10 +8,11 @@ const Menu = () => {
         <ul className={style.ul}>
             <Link to='/nyttop'><img src={Logo} alt="logo" /></Link>          
           <div>
-            <Link to='/section'><li>World</li></Link>
-            <Link to='/section'><li>Food</li></Link>
-            <Link to='/section'><li>Tech</li></Link>
-            <Link to='/section'><li>Business</li></Link>
+            <Link to='/section/world'><li>World</li></Link>
+            <Link to='/section/science'><li>Science</li></Link>
+            <Link to='/section/tech'><li>Tech</li></Link>
+            <Link to='/section/health'><li>Health</li></Link>
+            <Link to='/section/politics'><li>Politics</li></Link>
           </div>
         </ul>
       </nav>
