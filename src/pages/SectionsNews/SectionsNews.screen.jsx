@@ -1,6 +1,9 @@
 import { useEffect, useContext } from 'react'
 import { NewYorkContext } from '../../context/NewYork.context';
 import { useParams, useNavigate } from 'react-router-dom';
+
+import Loading from '../../components/Loading/Loading.component';
+import Error from '../../components/Error/Error.component';
 const SectionsNews = () => {
 
   const {typeNews} = useParams();
@@ -32,6 +35,9 @@ const SectionsNews = () => {
       break;
     }
   }, [typeNews])
+
+  if(loading) return <Loading />
+  if(error) return <Error />
 
   return (
     <div>
