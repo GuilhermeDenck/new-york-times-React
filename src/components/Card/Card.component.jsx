@@ -1,7 +1,7 @@
 import React from 'react'
 
-import style from './CardHome.module.css';
-function CardHome({keyCard, section, image, caption, title }) {
+import style from './Card.module.css';
+function Card({keyCard, section, image, caption, title }) {
 
   const upperCaseText = section.charAt(0).toUpperCase() + section.slice(1);
 
@@ -18,4 +18,4 @@ function CardHome({keyCard, section, image, caption, title }) {
   )
 }
 
-export default CardHome;
+export default Card;
