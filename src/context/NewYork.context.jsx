@@ -5,7 +5,7 @@ export const NewYorkContext = createContext();
 
 const NewYorkProvider = ({children}) => {
 
-  const TOKEN = 'jW6a1bsrsqzbYBm8WhnM72WRvvVks4OM';
+  const TOKEN = 'iWaUCXrEeNARxOaYDJ016EFRcQwAphib';
 
   const [home, setHome] = useState([]);
   const [news, setNews] = useState({});

@@ -16,9 +16,12 @@ const Home = () => {
 
   if(loading) return <Loading /> 
   if(error) return <Error />
+
   return (
     <div className={style.home}>
-        <TopNew title = {home.title} abstract = {home.abstract} url={home.url} published_date={home.published_date} byline={home.byline} />
+      {home.map(e => 
+      (<TopNew  title = {e.title} abstract = {e.abstract} url={e.url} published_date={e.published_date} byline={e.byline} multimedia={e.multimedia[1].url} copyright={e.multimedia[0].copyright}/>)
+      )}
     </div>
   )
 }

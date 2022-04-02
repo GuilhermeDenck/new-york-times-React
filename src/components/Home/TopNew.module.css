@@ -1,0 +1,19 @@
+.topNew {
+    /* border: 1px solid black; */
+    width: 70%;
+}
+
+.cardInfo {
+    display: flex;
+    padding: 20px;
+    
+}
+
+.cardInfo img {
+    width: 500px;
+    height: 400px;
+}
+
+.cardInfoLeft {
+    margin-right: 20px;
+}
