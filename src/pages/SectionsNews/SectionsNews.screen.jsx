@@ -53,7 +53,17 @@ const SectionsNews = () => {
             top.map( e => (
               <div key={e.uri.split('/')[3]}>
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                  <TopNewsSection title={e.title ? e.title : 'No title'} abstract={e.abstract ? e.abstract : 'No abstract'} multimedia={e.multimedia ? e.multimedia[2].url : null} caption={e.multimedia ? e.multimedia[2].caption : null} kicker={e.kicker} published_date={e.published_date} byline={e.byline} copyright={e.multimedia ? e.multimedia[1].copyright : null} param={'G'}/>
+                  <TopNewsSection 
+                    title={e.title} 
+                    abstract={e.abstract} 
+                    multimedia={e.multimedia ? e.multimedia[2].url : null} 
+                    caption={e.multimedia ? e.multimedia[2].caption : null} 
+                    kicker={e.kicker} 
+                    published_date={e.published_date}
+                    byline={e.byline} 
+                    copyright={e.multimedia ? e.multimedia[1].copyright : null} 
+                    param={'G'}
+                  />
                 </Link>
               </div>
             ))
@@ -64,7 +74,17 @@ const SectionsNews = () => {
             aside.map( e => (
               <div key={e.uri.split('/')[3]}>
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                  <TopNewsSection title={e.title ? e.title : 'No title'} abstract={e.abstract ? e.abstract : 'No abstract'} multimedia={e.multimedia ? e.multimedia[2].url : null} caption={e.multimedia ? e.multimedia[2].caption : null} kicker={e.kicker} published_date={e.published_date} byline={e.byline} copyright={e.multimedia ? e.multimedia[1].copyright : null} param={'P'}/>
+                  <TopNewsSection 
+                    title={e.title} 
+                    abstract={e.abstract ? e.abstract : 'No abstract'} 
+                    multimedia={e.multimedia ? e.multimedia[2].url : null} 
+                    caption={e.multimedia ? e.multimedia[2].caption : null} 
+                    kicker={e.kicker} 
+                    published_date={e.published_date}
+                    byline={e.byline} 
+                    copyright={e.multimedia ? e.multimedia[1].copyright : null} 
+                    param={'P'}
+                  />
                 </Link>
               </div>
             ))
@@ -75,7 +95,17 @@ const SectionsNews = () => {
           cardAside.map( e => (
             <div key={e.uri.split('/')[3]}>
               <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                <AsideNewsSection title={e.title ? e.title : 'No title'} abstract={e.abstract ? e.abstract : 'No abstract'} multimedia={e.multimedia ? e.multimedia[2].url : null} caption={e.multimedia ? e.multimedia[2].caption : null} kicker={e.kicker} published_date={e.published_date} byline={e.byline} copyright={e.multimedia ? e.multimedia[1].copyright : null} param={'G'}/>
+                <AsideNewsSection 
+                  title={e.title} 
+                  abstract={e.abstract ? e.abstract : 'No abstract'} 
+                  multimedia={e.multimedia ? e.multimedia[2].url : null} 
+                  caption={e.multimedia ? e.multimedia[2].caption : null} 
+                  kicker={e.kicker} 
+                  published_date={e.published_date} 
+                  byline={e.byline} 
+                  copyright={e.multimedia ? e.multimedia[1].copyright : null} 
+                  param={'G'}
+                />
               </Link>
             </div>
           ))
@@ -86,7 +116,7 @@ const SectionsNews = () => {
           {
             cards.map(e => (
               <div key={e.uri.split('/')[3]}>
-                <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)} >
+                <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                   <Card 
                     section={e.section}
                     image={e.multimedia ? e.multimedia[2].url : null}
@@ -104,8 +134,15 @@ const SectionsNews = () => {
         {
           rest.map( e => (
             <div key={e.uri.split('/')[3]}>
-              <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                <SectionBanner date={moment(e.published_date).format("ll")} title={ e.title ? e.title : 'Sem titulo'} text={e.abstract ? e.abstract : 'Sem informção'} author={e.byline} img={ e.multimedia ? e.multimedia[1].url : null } alt={e.multimedia ? e.multimedia[1].caption : null}/>
+              <Link to={`/details/${e.uri.split('/')[3]}`}onClick={ () => setArticle(e)}>
+                <SectionBanner 
+                  date={moment(e.published_date).format("ll")} 
+                  title={ e.title ? e.title : 'Sem titulo'} 
+                  text={e.abstract ? e.abstract : 'Sem informção'} 
+                  author={e.byline} 
+                  img={ e.multimedia ? e.multimedia[1].url : null } 
+                  alt={e.multimedia ? e.multimedia[1].caption : null}
+                />
               </Link>
             </div>
           ))
