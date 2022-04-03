@@ -1,6 +1,6 @@
 import { useEffect, useContext, useState } from 'react'
 import { NewYorkContext } from '../../context/NewYork.context';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import moment from 'moment';
 
@@ -20,8 +20,7 @@ const SectionsNews = () => {
 
   const upperCaseText = typeNews.charAt(0).toUpperCase() + typeNews.slice(1);
 
-  const { getNewsWorld, getNewsScience, getNewsTech, getNewsHealth, getNewsPolitics, news, error, loading, setArticle } = useContext(NewYorkContext);
-  const navigate = useNavigate();
+  const { getNews, news, error, loading, setArticle } = useContext(NewYorkContext);
 
   const [top, setTop] = useState([]);
   const [aside, setAside] = useState([]);
@@ -30,33 +29,16 @@ const SectionsNews = () => {
   const [rest, setRest] = useState([]);
 
   useEffect(() => {
-    switch (typeNews) {
-      case 'world':
-        getNewsWorld();
-      break;
-      case 'science':
-        getNewsScience();
-      break;
-      case 'tech':
-        getNewsTech();
-      break;
-      case 'health':
-        getNewsHealth();
-      break;
-      case 'politics':
-        getNewsPolitics();
-      break;
-      default:
-        navigate('/nyttop');
-      break;
-    }
+    getNews(typeNews);
+  }, [typeNews]);
+
+  useEffect(() => {
     setTop(news.slice(0, 1));
     setAside(news.slice(1, 2));
     setCardAside(news.slice(2, 4));
     setCards(news.slice(4,14))
     setRest(news.slice(14));
-
-  }, [typeNews])
+  }, [news]);
   
   if(loading) return <Loading />
   if(error) return <Error />
@@ -69,7 +51,6 @@ const SectionsNews = () => {
         <div>
         {
             top.map( e => (
-
               <div key={e.uri.split('/')[3]}>
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                   <TopNewsSection title={e.title ? e.title : 'No title'} abstract={e.abstract ? e.abstract : 'No abstract'} multimedia={e.multimedia ? e.multimedia[2].url : null} caption={e.multimedia ? e.multimedia[2].caption : null} kicker={e.kicker} published_date={e.published_date} byline={e.byline} copyright={e.multimedia ? e.multimedia[1].copyright : null} param={'G'}/>
@@ -81,7 +62,6 @@ const SectionsNews = () => {
         <div>
         {
             aside.map( e => (
-
               <div key={e.uri.split('/')[3]}>
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                   <TopNewsSection title={e.title ? e.title : 'No title'} abstract={e.abstract ? e.abstract : 'No abstract'} multimedia={e.multimedia ? e.multimedia[2].url : null} caption={e.multimedia ? e.multimedia[2].caption : null} kicker={e.kicker} published_date={e.published_date} byline={e.byline} copyright={e.multimedia ? e.multimedia[1].copyright : null} param={'P'}/>

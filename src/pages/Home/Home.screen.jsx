@@ -72,7 +72,7 @@ const Home = () => {
             top.map(e => (
             <div key={e.uri.split('/')[3]}>
               <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                <TopNews title = {e.title} abstract = {e.abstract} url={e.url} published_date={e.published_date} byline={e.byline} multimedia={e.multimedia[1].url} copyright={e.multimedia[0].copyright}/>
+                <TopNews title = {e.title} abstract = {e.abstract} url={e.url} published_date={e.published_date} byline={e.byline} multimedia={e?.multimedia[1].url} copyright={e?.multimedia[0].copyright}/>
               </Link>
               <hr />
             </div>
@@ -85,7 +85,7 @@ const Home = () => {
             aside.map( e => (
               <div key={e.uri.split('/')[3]}  >
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                  <AsideCard img={e.multimedia[1].url} caption={e.multimedia[1].caption} title={e.title} text={e.abstract}/>
+                  <AsideCard img={e?.multimedia[1].url} caption={e?.multimedia[1].caption} title={e.title} text={e.abstract}/>
                 </Link>
               </div>
             ))
@@ -94,7 +94,7 @@ const Home = () => {
             cardAside.map( e => (
               <div key={e.uri.split('/')[3]}  >
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                  <AsideBanner img={e.multimedia[2].url} caption={e.multimedia[2].caption} title={e.title}/>
+                  <AsideBanner img={e?.multimedia[2].url} caption={e?.multimedia[2].caption} title={e.title}/>
                 </Link>
                 <hr />
               </div>
@@ -110,8 +110,8 @@ const Home = () => {
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)} >
                   <Card 
                     section={e.section}
-                    image={e.multimedia[2].url}
-                    caption={e.multimedia[2].caption}
+                    image={e?.multimedia[2].url}
+                    caption={e?.multimedia[2].caption}
                     title={e.title}
                   />
                 </Link>
