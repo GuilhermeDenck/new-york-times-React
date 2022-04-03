@@ -1,5 +1,10 @@
 .banner {
   display: flex;
-  height: 97.2px;
+  height: 98.5px;
   margin: 20px 10px;
+  justify-content: space-between;
+}
+
+.banner h3 {
+  padding: 10px;
 }

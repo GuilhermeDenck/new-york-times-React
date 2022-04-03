@@ -29,8 +29,6 @@ const NewYorkProvider = ({children}) => {
       }
     });
 
-
-
     let newArray = newsFormated.filter( e => (e.abstract !== "" || e.title !== "") && moment(e.published_date, "YYYYMMDD").fromNow() !== '2 years ago');
 
     return newArray;
@@ -67,6 +65,7 @@ const NewYorkProvider = ({children}) => {
       getNewsHome,
       getNews,
       setArticle,
+      setLoading,
       article, home, news, error, loading }}>
       {children}
     </NewYorkContext.Provider>

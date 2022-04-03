@@ -12,11 +12,12 @@ import AsideCard from "../../components/AsideCard/AsideCard.component";
 import AsideBanner from "../../components/AsideBanner/AsideBanner.component";
 import TopNews from "../../components/TopNews/TopNews.component";
 
+import cloud from '../../images/cloud.png'
 import titleNY from '../../images/nytimes-wordmark.svg'
 import style from './Home.module.css';
 const Home = () => {
 
-  const { getNewsHome, home, error, loading, setArticle } = useContext(NewYorkContext);
+  const { getNewsHome, home, error, loading, setArticle, setLoading } = useContext(NewYorkContext);
 
   const [top, setTop] = useState([]);
   const [aside, setAside] = useState([]);
@@ -39,6 +40,7 @@ const Home = () => {
   }
 
   useEffect(() => {
+    setLoading(true);
     getNewsHome();
     getTempNewYork();
   }, [])
@@ -59,6 +61,7 @@ const Home = () => {
         <p>{moment().format("ll")}</p>
         <img src={titleNY} alt='New York Times' />
         <div className={style.temp}>
+          <img src={cloud} alt="cloud" />
           <p>{temp}°C</p>
           <div className={style.maxMin}>
             <small>{max}°</small>

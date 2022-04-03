@@ -20,7 +20,7 @@ const SectionsNews = () => {
 
   const upperCaseText = typeNews.charAt(0).toUpperCase() + typeNews.slice(1);
 
-  const { getNews, news, error, loading, setArticle } = useContext(NewYorkContext);
+  const { getNews, news, error, loading, setArticle, setLoading } = useContext(NewYorkContext);
 
   const [top, setTop] = useState([]);
   const [aside, setAside] = useState([]);
@@ -29,6 +29,7 @@ const SectionsNews = () => {
   const [rest, setRest] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
     getNews(typeNews);
   }, [typeNews]);
 

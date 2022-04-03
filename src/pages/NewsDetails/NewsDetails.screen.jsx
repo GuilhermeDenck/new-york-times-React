@@ -20,7 +20,6 @@ const NewsDetails = () => {
     setAssets(article.multimedia[0]);
   }, []);
 
-  console.log(assets);
   return (
     <>
       {

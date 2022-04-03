@@ -1,6 +1,8 @@
 .cardBox {
   width: 100%;
   margin: 20px 10px;
+  padding: 10px;
+  border-left: 1px solid #e6e6e6;
 }
 
 .cardBox img {
@@ -10,5 +12,5 @@
 .cardBox p {
   font-size: 0.8rem;
   font-weight: 200;
-  color: rgb(18, 18, 18);;
+  color: rgb(18, 18, 18);
 }

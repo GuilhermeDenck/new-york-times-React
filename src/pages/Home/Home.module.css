@@ -11,11 +11,19 @@
 
 .temp {
   display: flex;
+  align-items: center;
+}
+
+.temp > img {
+  width: 25px;
+  height: 25px;
 }
 
 .temp > p {
   font-weight: bold;
   margin-right: 5px;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
 .maxMin {
