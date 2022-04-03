@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NewYorkProvider from './context/NewYork.context'
 
 import Home from './pages/Home/Home.screen';
@@ -16,14 +16,14 @@ function App() {
         <Header />
           <div className='bodyNYT'>
             <Routes>
-              <Route path='*' element={<Home />}/>
-              <Route exact path='/nyttop' element={<Home />}/>
+              <Route path='/nyttop' element={<Home />}/>
               <Route path='/section' element={<SectionsNews />}> 
                 <Route path=':typeNews' element={<SectionsNews/>}/>
               </Route>
               <Route path='/details' element={<NewsDetails />}> 
                 <Route path=':idNews' element={<NewsDetails />}/>
               </Route>
+              <Route path='*' element={<Navigate to={'/nyttop'} />}/>
             </Routes>
           </div>
         <Footer/>
