@@ -50,18 +50,14 @@ const SectionsNews = () => {
         navigate('/nyttop');
       break;
     }
-
-  }, [typeNews])
-
-  useEffect(() => {
     setTop(news.slice(0, 1));
     setAside(news.slice(1, 2));
     setCardAside(news.slice(2, 4));
     setCards(news.slice(4,14))
     setRest(news.slice(14));
+
   }, [typeNews])
   
-  console.log(news.multimedia);
   if(loading) return <Loading />
   if(error) return <Error />
 
@@ -73,7 +69,7 @@ const SectionsNews = () => {
         <div>
         {
             top.map( e => (
-              console.log(e.title),
+
               <div key={e.uri.split('/')[3]}>
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                   <TopNewsSection title={e.title ? e.title : 'No title'} abstract={e.abstract ? e.abstract : 'No abstract'} multimedia={e.multimedia ? e.multimedia[2].url : null} caption={e.multimedia ? e.multimedia[2].caption : null} kicker={e.kicker} published_date={e.published_date} byline={e.byline} copyright={e.multimedia ? e.multimedia[1].copyright : null} param={'G'}/>
@@ -85,7 +81,7 @@ const SectionsNews = () => {
         <div>
         {
             aside.map( e => (
-              console.log(e.title),
+
               <div key={e.uri.split('/')[3]}>
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                   <TopNewsSection title={e.title ? e.title : 'No title'} abstract={e.abstract ? e.abstract : 'No abstract'} multimedia={e.multimedia ? e.multimedia[2].url : null} caption={e.multimedia ? e.multimedia[2].caption : null} kicker={e.kicker} published_date={e.published_date} byline={e.byline} copyright={e.multimedia ? e.multimedia[1].copyright : null} param={'P'}/>
@@ -97,7 +93,6 @@ const SectionsNews = () => {
         <div>
         {
           cardAside.map( e => (
-            console.log(e.title),
             <div key={e.uri.split('/')[3]}>
               <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                 <AsideNewsSection title={e.title ? e.title : 'No title'} abstract={e.abstract ? e.abstract : 'No abstract'} multimedia={e.multimedia ? e.multimedia[2].url : null} caption={e.multimedia ? e.multimedia[2].caption : null} kicker={e.kicker} published_date={e.published_date} byline={e.byline} copyright={e.multimedia ? e.multimedia[1].copyright : null} param={'G'}/>
@@ -128,7 +123,6 @@ const SectionsNews = () => {
       </div>
         {
           rest.map( e => (
-            console.log(e.title),
             <div key={e.uri.split('/')[3]}>
               <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                 <SectionBanner date={moment(e.published_date).format("ll")} title={ e.title ? e.title : 'Sem titulo'} text={e.abstract ? e.abstract : 'Sem informção'} author={e.byline} img={ e.multimedia ? e.multimedia[1].url : null } alt={e.multimedia ? e.multimedia[1].caption : null}/>
