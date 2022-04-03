@@ -76,7 +76,7 @@ const SectionsNews = () => {
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                   <TopNewsSection 
                     title={e.title} 
-                    abstract={e.abstract ? e.abstract : 'No abstract'} 
+                    abstract={e.abstract} 
                     multimedia={e.multimedia ? e.multimedia[2].url : null} 
                     caption={e.multimedia ? e.multimedia[2].caption : null} 
                     kicker={e.kicker} 
@@ -97,7 +97,7 @@ const SectionsNews = () => {
               <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
                 <AsideNewsSection 
                   title={e.title} 
-                  abstract={e.abstract ? e.abstract : 'No abstract'} 
+                  abstract={e.abstract} 
                   multimedia={e.multimedia ? e.multimedia[2].url : null} 
                   caption={e.multimedia ? e.multimedia[2].caption : null} 
                   kicker={e.kicker} 
@@ -137,8 +137,8 @@ const SectionsNews = () => {
               <Link to={`/details/${e.uri.split('/')[3]}`}onClick={ () => setArticle(e)}>
                 <SectionBanner 
                   date={moment(e.published_date).format("ll")} 
-                  title={ e.title ? e.title : 'Sem titulo'} 
-                  text={e.abstract ? e.abstract : 'Sem informção'} 
+                  title={e.title} 
+                  text={e.abstract} 
                   author={e.byline} 
                   img={ e.multimedia ? e.multimedia[1].url : null } 
                   alt={e.multimedia ? e.multimedia[1].caption : null}

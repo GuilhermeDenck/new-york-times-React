@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import api from "../service/api";
+import moment from "moment";
 
 export const NewYorkContext = createContext();
 
@@ -27,7 +28,12 @@ const NewYorkProvider = ({children}) => {
           byline: e.byline
       }
     });
-    return newsFormated;
+
+
+
+    let newArray = newsFormated.filter( e => (e.abstract !== "" || e.title !== "") && moment(e.published_date, "YYYYMMDD").fromNow() !== '2 years ago');
+
+    return newArray;
   }
 
   const getNewsHome = async () => {

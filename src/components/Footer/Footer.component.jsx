@@ -17,12 +17,26 @@ const Footer = () => {
       <div className={style.links}>
         <div className={style.news}>
           <h4>NEWS</h4>
-          <Link to='/'><p>Home</p></Link>
+          <Link to='/nyttop'><p>Home</p></Link>
           <Link to='/section/world'><p>World</p></Link>
-          <Link to='/section/science'><p>Science</p></Link>
-          <Link to='/section/tech'><p>Tech</p></Link>
-          <Link to='/section/health'><p>Health</p></Link>
+          <Link to='/section/us'><p>U.S</p></Link>
           <Link to='/section/politics'><p>Politics</p></Link>
+          <Link to='/section/nyregion'><p>N.Y.</p></Link>
+          <Link to='/section/business'><p>Business</p></Link>
+          <Link to='/section/opinion'><p>Opinion</p></Link>
+          <Link to='/section/technology'><p>Tech</p></Link>
+          <Link to='/section/science'><p>Science</p></Link>
+          <Link to='/section/health'><p>Health</p></Link>
+          <Link to='/section/sports'><p>Sports</p></Link>
+          <Link to='/section/arts'><p>Arts</p></Link>
+          <Link to='/section/books'><p>Books</p></Link>
+          <Link to='/section/style'><p>Style</p></Link>
+          <Link to='/section/food'><p>Food</p></Link>
+          <Link to='/section/travel'><p>Travel</p></Link>
+          <Link to='/section/magazine'><p>Magazine</p></Link>
+          <Link to='/section/tmagazine'><p>T Magazine</p></Link>
+          <Link to='/section/realestate'><p>Real Estate</p></Link>
+          <Link to='/section/movies'><p>Vídeo</p></Link>
         </div>
         <div className={style.subscribe}>
           <h4>SUBSCRIBE</h4>
