@@ -88,7 +88,7 @@ const Home = () => {
             aside.map( e => (
               <div key={e.uri.split('/')[3]}  >
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                  <AsideCard img={e?.multimedia[1].url} caption={e?.multimedia[1].caption} title={e.title} text={e.abstract}/>
+                  <AsideCard img={e?.multimedia[1].url} caption={e?.multimedia[1].caption} title={e.title} text={e.abstract} copy={e?.multimedia[0].copyright}/>
                 </Link>
               </div>
             ))

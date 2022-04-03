@@ -72,7 +72,7 @@ const Footer = () => {
         </div>  
       </div>
       <div className={style.footerBottom}>
-        <a href="#">
+        <a href="https://www.nytimes.com/" target="_blank" rel='noreferrer'>
           <p>&copy; 2022 The New York Times Company</p>
         </a>
       </div>
