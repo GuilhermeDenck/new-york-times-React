@@ -68,27 +68,38 @@ const Home = () => {
             <small>{min}°</small>
           </div>
         </div>
-      </div>
+      </div>      
       <div className={style.mainNotice}>
         <div  className={style.top}>
           {
             top.map(e => (
             <div key={e.uri.split('/')[3]}>
               <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                <TopNews title = {e.title} abstract = {e.abstract} url={e.url} published_date={e.published_date} byline={e.byline} multimedia={e?.multimedia[1].url} copyright={e?.multimedia[0].copyright}/>
+                <TopNews 
+                  title = {e.title}
+                  abstract = {e.abstract}
+                  url={e.url}
+                  published_date={e.published_date}
+                  byline={e.byline}
+                  multimedia={e?.multimedia[1].url}
+                  copyright={e?.multimedia[0].copyright}/>
               </Link>
               <hr />
             </div>
             ))
           }   
         </div>
-
         <div className={style.aside}>
           {
             aside.map( e => (
               <div key={e.uri.split('/')[3]}  >
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                  <AsideCard img={e?.multimedia[1].url} caption={e?.multimedia[1].caption} title={e.title} text={e.abstract} copy={e?.multimedia[0].copyright}/>
+                  <AsideCard 
+                    img={e?.multimedia[1].url} 
+                    caption={e?.multimedia[1].caption} 
+                    title={e.title} 
+                    text={e.abstract} 
+                    copy={e?.multimedia[0].copyright}/>
                 </Link>
               </div>
             ))
@@ -97,7 +108,10 @@ const Home = () => {
             cardAside.map( e => (
               <div key={e.uri.split('/')[3]}  >
                 <Link to={`/details/${e.uri.split('/')[3]}`} onClick={ () => setArticle(e)}>
-                  <AsideBanner img={e?.multimedia[2].url} caption={e?.multimedia[2].caption} title={e.title}/>
+                  <AsideBanner 
+                    img={e?.multimedia[2].url} 
+                    caption={e?.multimedia[2].caption} 
+                    title={e.title}/>
                 </Link>
                 <hr />
               </div>
@@ -105,7 +119,6 @@ const Home = () => {
           }
         </div>
       </div>
-
       <div className={style.gridCards}>
           {
             rest.map(e => (

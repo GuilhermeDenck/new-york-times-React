@@ -21,20 +21,16 @@ const NewsDetails = () => {
   }, []);
 
   return (
-    <>
-      {
-          <div className={style.newsDetails}>
-            <h1>{article.title}</h1>
-            <div className={style.bannerAuthor}>
-              <img src={Author} alt="Foto do author"/>
-              <p>{article.byline ? article.byline : 'Autor anônimo'}</p>
-            </div>
-            <small>{moment(article.published_date).format('ll')}</small>
-            <img src={assets.url} alt={assets.caption} />
-            <p>{article.abstract}</p>
-          </div> 
-      }
-    </>
+      <div className={style.newsDetails}>
+        <h1>{article.title}</h1>
+        <div className={style.bannerAuthor}>
+          <img src={Author} alt="Foto do author"/>
+          <p>{article.byline ? article.byline : 'Autor anônimo'}</p>
+        </div>
+        <small>{moment(article.published_date).format('ll')}</small>
+        <img src={assets.url} alt={assets.caption} />
+        <p>{article.abstract}</p>
+      </div> 
   )
 }
 

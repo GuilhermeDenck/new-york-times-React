@@ -13,12 +13,28 @@ import TopNewsSection from '../../components/TopNewsSection/TopNewsSection.compo
 import AsideNewsSection from '../../components/AsideNewsSection/AsideNewsSection.component';
 import Card from '../../components/Card/Card.component';
 
-
 const SectionsNews = () => {
 
   const {typeNews} = useParams();
 
-  const upperCaseText = typeNews.charAt(0).toUpperCase() + typeNews.slice(1);
+  let upperCaseText = typeNews.charAt(0).toUpperCase() + typeNews.slice(1);
+
+  switch (upperCaseText) {
+    case 'Realestate':
+      upperCaseText = 'Real State';
+    break;
+    case 'Nyregion':
+      upperCaseText = 'N.Y';
+    break;
+    case 'Us':
+      upperCaseText = 'U.S';
+    break;
+    case 'Tmagazine':
+      upperCaseText = 'T Magazine';
+    break;
+    default:
+      upperCaseText = upperCaseText;
+  }
 
   const { getNews, news, error, loading, setArticle, setLoading } = useContext(NewYorkContext);
 
